@@ -2,31 +2,34 @@
 
 var results = "";
 var routineLength = "";
+var routineTime = "";
+var cardioChosen = false;
+var bodyweightChosen = false;
 
-var exerciseArray = [
+var cardioArray = [
     {name: "plank",
      gifID: "KbOsMppYjfO5a",  
-     type: "bodyweight",
      time: 60,
      instructions: "Lie face down with forearms on the floor and hands clasped. Extend the legs behind the body and rise up on the toes. Keeping the back straight, tighten the core and hold the position for 30-60 seconds (or as long as you can hang)."
     },
     {name: "burpee",
      gifID: "l0IpWJtQ7ksIIL8cM",  
-     type: "bodyweight",
      time: 60,
      instructions: "Start out in a low squat position with hands on the floor. Next, kick the feet back to a push-up position, complete one push-up, then immediately return the feet to the squat position. Leap up as high as possible before squatting and moving back into the push-up portion of the show."
     },
-    {name: "lateral squat",
-     gifID: "26BROTgFzjf22acJq",  
-     type: "bodyweight",
-     time: 60,
-     instructions: "Start in a standing position, take your feet out sideways so that they are wider than shoulder width and toes turned out slightly. Reach your hands forwards at shoulder height."
-    },
+    
     {name: "jumpingjack",
      gifID: "l0IpWJtQ7ksIIL8cM",
-     type: "cardio",
      time: 60,
      instructions: "Stand up straight with your shoulders back and your pelvis relaxed. Hold your arms at your side with your feet shoulder-width apart, then jump, spreading your legs slightly and extending your arms over your head. As you land, bring your arms back down to your sides. Tuck in your tummy while doing these for toning your lower abs as well."
+    }
+]
+
+var bodyweightArray = [
+    {name: "lateral squat",
+     gifID: "26BROTgFzjf22acJq",  
+     time: 60,
+     instructions: "Start in a standing position, take your feet out sideways so that they are wider than shoulder width and toes turned out slightly. Reach your hands forwards at shoulder height."
     }
 ]
 
@@ -34,11 +37,23 @@ var exerciseArray = [
 
 function displayExerciseGifs() {
 
-    // Check length of exercise routine requested
-    routineLength = $("#times option:selected").text();
-    var thenum = routineLength.replace(" minutes", "");
+    //Check type of exercise selected
+    if ($("#customCheck1").prop("checked")){
+        bodyweightChosen = true;
+        console.log("bodyweight: " + bodyweightChosen);
+    }
+
+    if ($("#customCheck2").prop("checked")){
+        cardioChosen = true;
+        console.log("cardio:" + cardioChosen);
+    }
+    
+    // Check length of exercise routine selected
+    routineTime = $("#times option:selected").text();
+    var routineLength = routineTime.replace(" minutes", "");
   
-    var queryURL = "http://api.giphy.com/v1/gifs/" + exerciseArray[0].gifID +"?api_key=dc6zaTOxFJmzC";
+    
+    var queryURL = "http://api.giphy.com/v1/gifs/" + cardioArray[0].gifID +"?api_key=dc6zaTOxFJmzC";
     
     // Creating an AJAX call for gif selected from array
     $.ajax({
