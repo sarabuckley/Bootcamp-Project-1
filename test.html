@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!-- Added link to the jQuery Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+</head>
+<body>
+<script>
+
+        var clientID = "ZGM2NmM3NGQyMGFmNDVlZGIxZTUwZmYyNzQ5ZmU0OGE";
+        var clientSecret = "Y2IyMDY5ZGE3OGNiNDI0NGJhNGU3MWQ3YjU2NGZmOWY";
+        
+        fetch("http://myserver.com/getToken") 
+
+        // Using access token to access Spotify
+        $.ajax({
+          url: "https://accounts.spotify.com/api/token",
+          method: "POST",
+          grant_type: "client_credentials",
+          headers: {
+              "Authorization": "Basic " + clientID + ":" + clientSecret 
+          },
+          success: function(res) {
+            console.log('getAccessToken-S');
+            console.log(res.data);
+            that.setData({
+            token: res.data
+            })
+          }
+        });        
+  
+
+        var queryURL = "https://api.spotify.com/v1/browse/categories/37i9dQZF1DWUVpAXiEPK8P/playlists";
+    
+        
+       //sample
+       // var accessToken = "{my-token}";
+//$.ajax({
+//    url: 'https://api.spotify.com/v1/users/{my-username}/playlists?limit=3&offset=0',
+//    type: 'GET',
+//    headers {
+//        'Authorization' : 'Bearer ' + accessToken;
+//    },
+//    success: function(data) {
+//        console.log(data);
+//    }
+//});
+
+
+        // Creating an AJAX call for gif selected from array
+//        $.ajax({
+//          url: queryURL,
+//          method: "GET"
+//        }).then(function(response) {
+//          console.log(response);
+//        });    
+
+          //GET https://api.spotify.com/v1/browse/categories/{category_id}/playlists
+
+          //<iframe //src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DWUVpAXiEPK8P" //width="300" height="380" frameborder="0" allowtransparency="true" //allow="encrypted-media"></iframe>
+
+
+
+        //sample
+       // function getAccessToken() {
+  //wx.request({
+   // url: 'https://accounts.spotify.com/api/token',
+    //method: 'POST',
+    //data: {
+    //  grant_type: 'client_credentials'
+    //},
+    //header: {
+    //  'Authorization': 'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET),
+    //  'Content-Type': 'application/x-www-form-urlencoded'
+    //},
+    //success: function(res) {
+    //  console.log('getAccessToken-S');
+    //  console.log(res.data);
+    //  that.setData({
+    //    token: res.data
+    //  })
+    //},
+    //complete: function() {
+    //  console.log('getAccessToken-C');
+    //}
+  //});
+//}
+</script>
+</body>
+</html>
+<script >

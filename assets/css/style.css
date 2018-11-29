@@ -1,3 +1,19 @@
 .jumbotron {
-    background-color:#08E8DE
+    background-color:#08E8DE;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
 }    
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#startBtn {
+    background-color: #08E8DE;
+}
+
+#customCheck1, #customCheck2 {
+    background-color: #08E8DE;
+}
