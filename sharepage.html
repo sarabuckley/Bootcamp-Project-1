@@ -2,56 +2,57 @@
 <html lang="en-us">
 
 <head>
-      
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
-  <meta charset="UTF-8">
-  <title>Swolemate Finish Page</title>
+    
 
-  
+    <meta charset="UTF-8">
+    <title>Swolemate Finish Page</title>
+
+
 </head>
 
 
-  <body>
+<body>
+    <center>
+    <div class="swole" id="title">
+        <h1>SWOLEMATE</h1>
+    </div>
 
-<div class="swole" id="title">
-    <h1>SWOLEMATE</h1> </div>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container-fluid"></div>
-<h1 class="display-4">Great Job Finishing Your Swolemates Workout!</h1>
-<img src="https://media.giphy.com/media/b9j2AgTyXs3HW/giphy.gif" class="img-thumbnail mx-auto d-block" alt="Care Bears">
-<div id="shareBtn" class="btn btn-outline-danger center-block">Stay Accountable and Share with your Friends!</div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container-fluid"></div>
+            <h5 class="display-5">Great Job Finishing Your Workout!</h5>
+        </div>
 
- <script>
-      window.fbAsyncInit = function() {
-      FB.init({
-        appId            : '779831462355252',
-        autoLogAppEvents : true,
-        xfbml            : true,
-        version          : 'v3.2'
-      });
-    };
+        <h6 class="display-6">You're on your way to swole, mate ; )</h6>
+        
+        </div>
 
-    (function(d, s, id){
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        <br>
 
-    document.getElementById('shareBtn').onclick = function() {
-      FB.ui({
-        method: 'share',
-        display: 'popup',
-        quote: 'I just used Swolemates to work off my bad choices from the weekend! You should try it too!',
-        href: 'sarabuckley.github.io/Swolemate/',
-      }, function(response){});
-    }
-  </script>
-  </body>
+        <img src="https://media.giphy.com/media/3ohhwgf8em8fLaqM6s/giphy.gif" class="img-thumbnail mx-auto d-block" alt="Care Bears">
 
-  </html>
+        <br>
+
+
+        <button id="facebookShareLink">Go Ahead and Brag to your Friends</button>
+
+    </center>
+
+    <script>
+        window.onload = shareSite
+        function shareSite() {
+            document.getElementById("facebookShareLink").addEventListener("click", function () {
+                var cap = "The SWOLEMATES site helped me work out (some of) my poor choices from the weekend.  Try it out and be my SWOLEMATE <3"
+                var fbpopup = window.open(`https://www.facebook.com/sharer/sharer.php?u=http://sarabuckley.github.io/Swolemate/&quote="${cap}"`, "pop", "width=600, height=400, scrollbars=no");
+                return false;
+            })
+        }
+
+    </script>
+</body>
+
+</html>
