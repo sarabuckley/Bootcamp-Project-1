@@ -1,0 +1,28 @@
+/*Add attribute data-circle-skin = "fire" to the div */
+/*Note :- This looks best on dark backgrounds*/
+.fire .loader {
+}
+.fire .loader-bg {
+  border-color: #777;
+  box-shadow: inset 2px 2px 20px 0 rgba(0,0,0,0.4);
+}
+.fire .text {
+  font-size: 20px;
+  color: #1D9985 !important;
+}
+.fire .loader-spinner {
+  border-color: #1D9985;
+}
+.fire.circle-loaded-75 .text {
+  color: #1D9985 !important;
+}
+.fire.circle-loaded-75 .loader-spinner {
+  border-color: #1D9985;
+}
+/*
+On dark bg -->
+green : #47ba49
+purple : #7b708d
+blue : #3ba8b6
+red : #ee4230;
+*/
