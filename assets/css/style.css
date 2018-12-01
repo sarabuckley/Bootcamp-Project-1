@@ -1,0 +1,87 @@
+
+
+#title {
+    
+    background: url('../images/paint-brush-stroke-6.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    font-family: 'Neucha', cursive;
+    text-align: center;
+    padding: 30px;
+}    
+
+
+#startBtn {
+    background-color:#1D9985;
+    font-family: 'Neucha', cursive;
+    font-size: 3vh;
+    text-align: center;
+}
+
+.select-type,
+.select-time,
+.select-start {
+    font-family: 'Neucha', cursive; 
+    font-size: 3vh;
+    margin:60px;
+}
+#times,
+#label-times {
+    font-family: 'Neucha', cursive;  
+    font-size: 3vh; 
+    display: inline-block;
+}
+
+.select-type {
+    margin: 60px auto;
+    }
+
+.checkbox, 
+.label {
+ 
+    display: inline-block;
+}
+
+#caption {
+    font-family: 'Neucha', cursive;
+    font-size: 3vh;
+    padding-top: 2%;
+}
+
+.animatedGif{
+max-width: 50%;
+height: auto;
+}
+
+.iconGif{
+    width: 5%; 
+    height: auto;
+    }
+
+#routineCompleteMsg1 {
+    font-family: 'Neucha', cursive;
+    font-size: 4vh;
+    padding-top: 10%;
+    text-align: center;
+}
+
+#routineCompleteMsg2 {
+    font-family: 'Neucha', cursive;
+    font-size: 3vh;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%
+}
+
+#routineCompleteGif {
+    text-align: center;
+}
+    
+#facebookShareLink{
+    background-color:#1D9985;
+    font-family: 'Neucha', cursive;
+    font-size: 3vh;
+    margin: 0 auto;
+    text-align: center;
+    position: center;
+}
